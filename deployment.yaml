@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-workshop
+  name: node-levelup
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx-workshop
+      app: node_levelup
   template:
     metadata:
       labels:
-        app: nginx-workshop
+        app: node_levelup
     spec:
       containers:
-      - name: nginx-workshop
-        image: brianapley/nginx-workshop
+      - name: node_levelup
+        image: brianapley/node-levelup
         imagePullPolicy: Always
         ports:
         - containerPort: 80
