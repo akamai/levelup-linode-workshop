@@ -17,5 +17,5 @@ spec:
         image: brianapley/node-levelup
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 1880
        
