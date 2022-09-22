@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: node_levelup
-        image: brianapley/node-levelup
+        image: brianapley/node-api
         imagePullPolicy: Always
         ports:
         - containerPort: 1880
