@@ -13,5 +13,5 @@ spec:
     protocol: TCP
     targetPort: 1880
   selector:
-    app: node_levelup
+    app: node-api
   sessionAffinity: None
