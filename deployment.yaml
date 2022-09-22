@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-levelup
+  name: node-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: node_levelup
+      app: node-api
   template:
     metadata:
       labels:
-        app: node_levelup
+        app: node-api
     spec:
       containers:
-      - name: node_levelup
+      - name: node-api
         image: brianapley/node-api
         imagePullPolicy: Always
         ports:
