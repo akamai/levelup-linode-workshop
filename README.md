@@ -68,7 +68,7 @@ Next step is to install git, and pull this repository to the Secure Shell Linode
 1. Install git via the SSH or LISH shell-
 
 ```
-sudo apt-get install git
+sudo apt-get -y install git
 ```
 2. Pull down this repository to the Linode machine-
 
