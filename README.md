@@ -124,7 +124,7 @@ Next step is to use kubectl to deploy the container endpoints to the LKE cluster
 
 1. Install kubectl by running the kubectl-install script included in the repository-
 ```
-./kubectl-install
+./kubectl-install.sh
 ```
 3. Define the yaml file output from the prior step as the kubeconfig.
 ```
