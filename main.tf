@@ -15,8 +15,8 @@ provider "linode" {
 //a Kubernetes cluster
 resource "linode_lke_cluster" "foobar" {
     k8s_version = var.k8s_version
-    label = "lke-west"
-    region = "us-west"
+    label = var.label
+    region = var.region
     tags = var.tags
 
     dynamic "pool" {
