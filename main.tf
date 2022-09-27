@@ -11,11 +11,15 @@ provider "linode" {
   token = var.token
 }
 
+//Create a random string for the k8s cluster label 
+resource "random_string" "label" {
+  length  = 10
+}
 //Use the linode_lke_cluster resource to create
 //a Kubernetes cluster
 resource "linode_lke_cluster" "foobar" {
     k8s_version = var.k8s_version
-    label = var.label
+    label = "${random_string.label.result}"
     region = var.region
     tags = var.tags
 
