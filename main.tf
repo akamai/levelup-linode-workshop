@@ -28,7 +28,7 @@ resource "linode_lke_cluster" "foobar" {
     }
 }
 resource "local_file" "lke_kubeconfig_yaml" {
-    content  = base64decode(linode_lke_cluster.thecluster.kubeconfig)
+    content  = base64decode(linode_lke_cluster.foobar.kubeconfig)
     filename = "${path.module}/kubeconfig.yaml"
 }
 //Export this cluster's attributes
