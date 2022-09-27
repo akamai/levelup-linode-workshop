@@ -33,14 +33,9 @@ resource "local_file" "lke_kubeconfig_yaml" {
 }
 
 //Export this cluster's attributes
-output "kubeconfig_1" {
+output "kubeconfig" {
    value = linode_lke_cluster.foobar.kubeconfig
    sensitive = true
-}
-output "kubeconfig_2" {
-   value = linode_lke_cluster.foobar2.kubeconfig
-   sensitive = true
-}
 
 output "api_endpoints" {
    value = linode_lke_cluster.foobar.api_endpoints
