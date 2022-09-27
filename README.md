@@ -78,20 +78,11 @@ git init && git pull https://github.com/akamai/linode-failover-workshop
 
 ### Install Terraform 
 
-Next step is to install Terraform. Run the below commands from the Linode shell-
+Next step is to install Terraform. The repository files include a terraform.sh script that perform the needed shell commands to install Terraform.
+
+1. Run the terraform.sh script-
 ```
-sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
-```
-```
- wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
-```
-(Note:  This command may return what appears to be garbage to the terminal screen, but it does work.  Press `ctrl`-C to get your command line prompt back).
- 
-```
-echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-```
-```
-sudo apt update && sudo apt-get install terraform
+./terraform.sh
 ```
 
 ### Provision LKE Cluster using Terraform
@@ -141,16 +132,10 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 ```
 sudo apt-get update && sudo apt-get install -y kubectl
 ```
-2. Extract the needed kubeconfig from each cluster into a yaml file from the terraform output.
-```
- export KUBE_VAR=`terraform output kubeconfig_1` && echo $KUBE_VAR | base64 -di > lke-cluster-config1.yaml
-```
-```
- export KUBE_VAR=`terraform output kubeconfig_2` && echo $KUBE_VAR | base64 -di > lke-cluster-config2.yaml
 ```
 3. Define the yaml file output from the prior step as the kubeconfig.
 ```
-export KUBECONFIG=lke-cluster-config1.yaml
+export KUBECONFIG=kubeconfig.yaml
 ```
 4. You can now use kubectl to manage the LKE cluster. Enter the below command to view a list of clusters, and view which cluster is currently being managed.
 ```
