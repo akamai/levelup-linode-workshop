@@ -120,18 +120,11 @@ Once deployment is complete, you should see a LKE clusters within the "Kubernete
 ### Deploy Containers to LKE 
 ![k8](https://user-images.githubusercontent.com/19197357/184130510-08d983b6-109c-4bdb-b50c-db97fec3571d.png)
 
-Next step is to use kubectl to deploy the node endpoints to the LKE cluster. 
+Next step is to use kubectl to deploy the container endpoints to the LKE cluster. The repository includes a script to perform the needed steps to install kubectl-
 
-1. Install kubectl via the below commands from the Linode shell-
+1. Install kubectl by running the kubectl-install script included in the repository-
 ```
-sudo apt-get update && sudo apt-get install -y ca-certificates curl && sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-```
-```
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-```
-```
-sudo apt-get update && sudo apt-get install -y kubectl
-```
+./kubectl-install
 ```
 3. Define the yaml file output from the prior step as the kubeconfig.
 ```
