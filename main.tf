@@ -31,12 +31,11 @@ resource "local_file" "lke_kubeconfig_yaml" {
     content  = base64decode(linode_lke_cluster.thecluster.kubeconfig)
     filename = "${path.module}/kubeconfig.yaml"
 }
-
 //Export this cluster's attributes
 output "kubeconfig" {
    value = linode_lke_cluster.foobar.kubeconfig
    sensitive = true
-
+}
 output "api_endpoints" {
    value = linode_lke_cluster.foobar.api_endpoints
 }
