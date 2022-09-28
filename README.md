@@ -12,6 +12,7 @@ Package of template files, examples, and illustrations for the Linode Level Up W
 - Sample kubernetes deployment files for starting an application on an LKE cluster.
 
 ### Exercise Diagram
+![Levelup Linode Diagram- Cox Auto -3](https://user-images.githubusercontent.com/19197357/192828729-e87a7a6e-e410-42b7-a060-b7158fb2ba85.jpg)
 
 ## Step by Step Instructions
 
