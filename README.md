@@ -35,11 +35,8 @@ The workshop scenario builds the following components and steps-
 
 We'll first create a Linode using the "Secure Your Server" Marketplace image. This will give us a hardened, consistent environment to run our subsequent commands from. 
 
-1. Create a Linode account
- - Goto https://login.linode.com/signup
- - Enter you akamai email address, a user name, and password
- - (Akamai employees get $100 per month of free services)
-
+1. Create a Linode user
+ - Go to the URL given to you during the session, enter a desired username (must be unique) and email, and verify/set your password when the link arrives in your inbox.
 2. Login to Linode Cloud Manager
  - https://login.linode.com/login
 3. Select "Create Linode"
