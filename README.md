@@ -57,8 +57,6 @@ We'll first create a Linode using the "Secure Your Server" Marketplace image. Th
 
 12. Once your Linode is running, login to it's shell (either using the web-based LISH console from Linode Cloud Manager, or via your SSH client of choice).
 
-
-
 ### Install and Run git 
 
 Next step is to install git, and pull this repository to the Secure Shell Linode. The repository includes terraform and kubernetes configuration files that we'll need for subsequent steps.
@@ -124,29 +122,29 @@ Next step is to use kubectl to deploy the container endpoints to the LKE cluster
 ```
 ./kubectl-install.sh
 ```
-3. Define the yaml file output from the prior step as the kubeconfig.
+2. Define the yaml file output from the prior step as the kubeconfig.
 ```
 export KUBECONFIG=kubeconfig.yaml
 ```
-4. You can now use kubectl to manage the LKE cluster. Enter the below command to view a list of clusters, and view which cluster is currently being managed.
+3. You can now use kubectl to manage the LKE cluster. Enter the below command to view a list of clusters, and view which cluster is currently being managed.
 ```
 kubectl config get-contexts
 ```
-5. Deploy an application to the the LKE cluster, using the deployment.yaml file included in this repository.
+4. Deploy an application to the the LKE cluster, using the deployment.yaml file included in this repository.
 ```
 kubectl create -f deployment.yaml
 ```
-6. Next, we need to set our certificate and private key values as kubeconfig secrets. This will allow us to enable TLS on our LKE cluster. 
+5. Next, we need to set our certificate and private key values as kubeconfig secrets. This will allow us to enable TLS on our LKE cluster. 
 
 NOTE: For ease of the workshop, the certificate and key are included in the repository. This is not a recommended practice.
 ```
 kubectl create secret tls mqtttest --cert cert.pem --key key.pem
 ```
-7. Deploy the service.yaml included in the repository via kubectl to allow inbound traffic.
+6. Deploy the service.yaml included in the repository via kubectl to allow inbound traffic.
 ```
 kubectl create -f service.yaml
 ```
-8. Validate that the service is running, and obtain it's external IP address.
+7. Validate that the service is running, and obtain it's external IP address.
 ```
 kubectl get services -A
 ```
